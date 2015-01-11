@@ -1,0 +1,60 @@
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-left: 300px
+}
+td {
+    width: 70px;
+    height: 70px;
+    border: 1px solid black;
+}
+
+.black{
+    background-color: black;
+}
+.gray{
+    background-color: gray;
+
+}
+img {
+    margin-left: 5px
+}
+#red{
+    position: absolute;
+    top: 575px;
+    left: 305px;
+    font-size: 22px;    
+}
+#blue{
+    position: absolute;
+    top: 575px;
+    left:760px;
+    font-size: 22px;
+}
+#turn{
+    position: absolute;
+    top: 575px;
+    left:550px;
+    font-size: 22px;
+}
+#winner{
+    position:absolute;
+    top:250px;
+    left: 90px;
+    font-size:26px
+}
+button{
+    position:absolute;
+    top:280px;
+    left: 78px;
+    font-size:26px;
+    background-color: white;
+    display: none
+}
+#force{
+    position: absolute;
+    top: 605px;
+    left:530px;
+    font-size: 22px;
+    font-weight: bold;    
+}
