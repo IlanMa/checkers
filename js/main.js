@@ -1,10 +1,6 @@
 $(document).ready(function(){
 var checkersGame = new Object();
 
-// *******************************
-// FIX BUG WITH TWO FORCED PIECES
-// *******************************
-
 checkersGame.generateTable = function(){
     var board = '<table><tr>'
     var count = 0;
@@ -76,6 +72,13 @@ checkersGame.movePiece = function(id, color, array, eat){
     this.force = '';
     this.board[checkersGame.selected] = 'X'
     this.board[id] = array
+    if (this.Turn && id >= 0 && id <=7){
+        this.turnKing(id, 'RedKing', 'RK')
+    }else if (!this.Turn && id >= 56){
+        this.turnKing(id, 'BlueKing', 'BK')
+    }else{
+        $('#'+id).children().attr('src', 'images/'+color+'Circle.png')
+    }
     if(eat){
         this.board[(checkersGame.selected+id)/2] = 'X'
         $('#'+(this.selected+id)/2).children().attr('src', 'images/EmptySquare.png')
@@ -93,13 +96,6 @@ checkersGame.movePiece = function(id, color, array, eat){
         this.checkForce(true, lastForce)
     }else{
         this.checkForce(false)
-    }
-    if (!this.Turn && id >= 0 && id <=7){
-        this.turnKing(id, 'RedKing', 'RK')
-    }else if (this.Turn && id >= 56){
-        this.turnKing(id, 'BlueKing', 'BK')
-    }else{
-        $('#'+id).children().attr('src', 'images/'+color+'Circle.png')
     }
     $('#'+this.selected).children().attr('src', 'images/EmptySquare.png')
     this.selected = -1
